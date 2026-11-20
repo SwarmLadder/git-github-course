@@ -30,3 +30,21 @@
 | Sparse checkout | Controls what paths populate the worktree |
 | Partial clone | Defers fetching selected Git objects |
 | Protected branch | Branch constrained by GitHub policy/rules |
+
+
+## Additional applied terms
+
+| Term | Meaning |
+|---|---|
+| Gitlink | Tree entry with mode `160000` pointing at a submodule commit |
+| `.gitmodules` | Versioned mapping of submodule paths to their configured URLs |
+| Git note | Metadata stored on a notes ref without modifying the annotated commit |
+| Squash merge | Apply a feature's net changes as one new commit without preserving feature ancestry |
+| Mainline parent | Parent chosen to determine the side retained when reverting a merge |
+| Cone-mode sparse checkout | Efficient directory-based selection of materialized tracked paths |
+| Protected environment | Deployment target with configured restrictions or approval requirements |
+| Least-privilege token | Credential whose scope is limited to the operations a job must perform |
+| `pull_request_target` | GitHub Actions event with base-repository trust context; must not blindly run untrusted PR code with privileged credentials |
+| Evidence pack | Reproducible commands, refs, test results, review rationale and rollback notes supporting an engineering decision |
+
+Apply these concepts in [six guided workshops](workshops/README.md) and the [24 checked tasks](practice/README.md).
