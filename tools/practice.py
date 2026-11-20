@@ -117,6 +117,7 @@ def start_task(task_id: str, workspace: Path = DEFAULT_WORKSPACE) -> Path:
         git(repo, "branch", "maintenance")
         meta["fix"] = make_commit(repo, "bugfix.txt", "validation fixed\n", "Fix validation")
         git(repo, "switch", "maintenance")
+        make_commit(repo, "maintenance.txt", "maintenance context\n", "Prepare maintenance branch")
     elif task_id == "A01":
         make_commit(repo, "chapter.txt", "v1\n", "First revision")
         meta["lost"] = make_commit(repo, "chapter.txt", "v2\n", "Important second revision")

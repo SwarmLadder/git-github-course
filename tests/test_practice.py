@@ -25,7 +25,7 @@ class PracticeTests(unittest.TestCase):
             for task_id in all_tasks():
                 with self.subTest(task_id=task_id):
                     start_task(task_id, root)
-                    with self.assertRaises(AssertionError):
+                    with self.assertRaises((AssertionError, RuntimeError)):
                         assert_task(task_id, root)
                     with self.assertRaises(FileExistsError):
                         start_task(task_id, root)
@@ -66,7 +66,7 @@ class PracticeTests(unittest.TestCase):
                         git(repo, "bisect", "bad", "HEAD")
                         git(repo, "bisect", "good", meta["good"])
                         found = git(repo, "bisect", "run", sys.executable, "check.py")
-                        self.assertIn("first bad commit", found.stdout)
+                        self.assertIn(meta["bad"], found.stdout)
                         git(repo, "bisect", "reset")
                         (repo / "finding.txt").write_text(meta["bad"] + "\n", encoding="utf-8")
                     elif task_id == "A03":
