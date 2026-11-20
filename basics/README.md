@@ -24,3 +24,7 @@ Read sequentially; each chapter includes four worked sections, explicit commands
 - [Course projects](../projects/README.md)
 
 Finish the chapter's exercises before checking reference material. Always run Git commands in a throwaway repository when they alter history or worktree files.
+
+## Enriched hands-on path
+
+After the reading, complete **B01–B08**, including newly graded ignore rules, partial staging, targeted restore and offline fetch. Then complete [Workshop 01: Worktree and index safety](../workshops/01_worktree_index_safety.md) and [Workshop 02: Offline remotes](../workshops/02_offline_remotes.md). Finish with [Project 1](../projects/01_local_team_workflow.md); show both your staged and unstaged diffs and explain why a fetch does not merge.
