@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create and check 12 offline Git exercises in disposable local repositories.
+"""Create and check 24 offline Git exercises in disposable local repositories.
 
 This tool never executes student-authored scripts. It only calls Git to set up
 or inspect repositories beneath .practice. Run from the course repository.
@@ -13,6 +13,8 @@ from pathlib import Path
 import subprocess
 import sys
 
+from extended_practice import EXTRA_IDS, setup as setup_extra, verify as verify_extra
+
 ROOT = Path(__file__).resolve().parents[1]
 TASKS_PATH = ROOT / "practice" / "tasks.json"
 DEFAULT_WORKSPACE = ROOT / ".practice"
@@ -20,8 +22,10 @@ DEFAULT_WORKSPACE = ROOT / ".practice"
 
 def all_tasks() -> dict[str, dict]:
     data = json.loads(TASKS_PATH.read_text(encoding="utf-8"))
-    if len(data) != 12 or len({x["id"] for x in data}) != len(data):
-        raise ValueError("The practice catalog must contain 12 unique tasks")
+    if len(data) != 24 or len({x["id"] for x in data}) != len(data):
+        raise ValueError("The practice catalog must contain 24 unique tasks")
+    if {t["id"] for t in data if t["id"] in EXTRA_IDS} != EXTRA_IDS:
+        raise ValueError("The extended practice tasks are missing")
     return {x["id"]: x for x in data}
 
 
@@ -137,6 +141,8 @@ def start_task(task_id: str, workspace: Path = DEFAULT_WORKSPACE) -> Path:
         make_commit(repo, "version.txt", "0.8.0\n", "Begin development")
         make_commit(repo, "version.txt", "0.9.0\n", "Prepare release candidate")
         make_commit(repo, "version.txt", "1.0.0\n", "Prepare release")
+    elif task_id in EXTRA_IDS:
+        setup_extra(task_id, task, repo, meta, git, make_commit, init_repo, git_env)
     else:
         raise AssertionError("Unhandled task")
     (task / "metadata.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
@@ -213,6 +219,8 @@ def assert_task(task_id: str, workspace: Path = DEFAULT_WORKSPACE) -> None:
         assert out("cat-file", "-t", "refs/tags/v1.0.0") == "tag", "Use an annotated, not lightweight tag"
         assert out("rev-parse", "v1.0.0^{commit}") == out("rev-parse", "main"), "Tag current release commit"
         assert "Release" in out("cat-file", "-p", "refs/tags/v1.0.0"), "Include release message"
+    elif task_id in EXTRA_IDS:
+        verify_extra(task_id, path, repo, metadata, git)
     else:
         raise AssertionError("Unhandled task")
 

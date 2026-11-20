@@ -73,3 +73,9 @@ git diff --cached --name-only
 - Why is git rm --cached different from git rm?
 
 **Finish when:** You can reproduce the commands in a fresh practice repo and explain every changed file, ref, and staged state.
+
+## Put this lesson into practice — B05
+
+Predict what Git ignores before touching the index. In the fixture, create a committed .gitignore that excludes generated data but explicitly keeps important.log. Verify with git check-ignore --no-index and git ls-files; ignored paths remain on disk.
+
+From the **course root**, run `python tools/practice.py start B05`, work inside `.practice/B05/repo`, then run `python tools/practice.py check B05`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/01_worktree_index_safety.md).

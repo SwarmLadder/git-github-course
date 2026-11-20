@@ -69,3 +69,9 @@ git log --oneline --graph --all -10
 - Why may SHA-1 and SHA-256 Git repository object IDs differ?
 
 **Pass condition:** Explain the state transition, failure path, and safeguards before running advanced commands.
+
+## Put this lesson into practice — A05
+
+Attach review evidence to the current commit with Git notes. Prove the commit object ID did not change, and explain why notes refs must be published explicitly if other clones need them.
+
+From the **course root**, run `python tools/practice.py start A05`, work inside `.practice/A05/repo`, then run `python tools/practice.py check A05`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/05_internals_and_dependencies.md).

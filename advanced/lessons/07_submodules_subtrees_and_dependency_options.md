@@ -66,3 +66,9 @@ Use a package manager for released libraries, a submodule when separate reposito
 - How does subtree affect the clone experience?
 
 **Completion:** Explain performance, security, and recovery trade-offs with reproducible evidence.
+
+## Put this lesson into practice — A08
+
+Add a local library as a Git submodule. Verify the gitlink has mode 160000 and the committed .gitmodules records a relative local URL. Keep file-protocol authorization scoped to one trusted command.
+
+From the **course root**, run `python tools/practice.py start A08`, work inside `.practice/A08/repo`, then run `python tools/practice.py check A08`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/05_internals_and_dependencies.md).

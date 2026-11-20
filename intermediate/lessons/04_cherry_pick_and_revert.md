@@ -69,3 +69,9 @@ git diff --check HEAD~1 HEAD
 - When should a published change be reverted rather than reset?
 
 **Evidence:** A clear commit graph, tested behavior, and a short explanation of why the workflow is appropriate.
+
+## Put this lesson into practice — I08
+
+A feature merge must be undone without erasing mainline history. Identify mainline parent 1, run a merge revert, and show which paths were removed and which were retained. Describe how future merges interact with this ancestry.
+
+From the **course root**, run `python tools/practice.py start I08`, work inside `.practice/I08/repo`, then run `python tools/practice.py check I08`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/04_undo_and_conflict_triage.md).

@@ -82,5 +82,89 @@
     "title": "Make an annotated release tag",
     "goal": "Create annotated v1.0.0 tag on main's current commit with a meaningful release message.",
     "hint": "git tag -a v1.0.0 -m 'Release 1.0.0'"
+  },
+  {
+    "id": "B05",
+    "level": "basics",
+    "title": "Ignore generated files but keep an important log",
+    "goal": "Commit .gitignore that ignores .env.local, build/ and *.log, except important.log. Commit important.log; leave generated files untracked and ignored.",
+    "hint": "Use patterns .env.local, build/, *.log and !important.log; git add .gitignore important.log."
+  },
+  {
+    "id": "B06",
+    "level": "basics",
+    "title": "Stage only the first hunk",
+    "goal": "In story.txt, stage only the line-03 change and keep the line-47 draft change unstaged.",
+    "hint": "Try git add -p story.txt. Compare git diff --cached and git diff."
+  },
+  {
+    "id": "B07",
+    "level": "basics",
+    "title": "Restore a tracked file without losing notes",
+    "goal": "Restore config.ini to its committed value while preserving untracked draft.txt and leaving commit history unchanged.",
+    "hint": "Inspect status. git restore -- config.ini affects tracked worktree edits only."
+  },
+  {
+    "id": "B08",
+    "level": "basics",
+    "title": "Fetch a new remote commit without merging",
+    "goal": "Fetch the newest main from the preconfigured LOCAL origin. Keep your own main branch on its original commit.",
+    "hint": "Use git fetch origin; compare git rev-parse main and git rev-parse origin/main."
+  },
+  {
+    "id": "I05",
+    "level": "intermediate",
+    "title": "Rebase a feature onto updated main",
+    "goal": "Rebase feature/reports onto the updated main, retaining one feature commit and the latest logging.conf.",
+    "hint": "Already on feature/reports: git rebase main. Validate git log --graph."
+  },
+  {
+    "id": "I06",
+    "level": "intermediate",
+    "title": "Stash staged work and an untracked draft",
+    "goal": "Stash staged README.md edits AND untracked draft.md so the working tree is clean, keeping the stash for later.",
+    "hint": "Use git stash push -u -m 'WIP draft'; inspect git stash list and status."
+  },
+  {
+    "id": "I07",
+    "level": "intermediate",
+    "title": "Squash a feature into one mainline commit",
+    "goal": "On main, combine the complete feature/promo changes into one new commit without adding a merge commit or rewriting feature/promo.",
+    "hint": "git merge --squash feature/promo; git commit -m 'Add promotion'."
+  },
+  {
+    "id": "I08",
+    "level": "intermediate",
+    "title": "Revert a two-parent merge correctly",
+    "goal": "Undo the latest merge on main, removing NOTICE.md but retaining ROADMAP.md and the original merge in history.",
+    "hint": "Use git revert -m 1 --no-edit HEAD. Mainline parent 1 is main before the merge."
+  },
+  {
+    "id": "A05",
+    "level": "advanced",
+    "title": "Attach review evidence with Git notes",
+    "goal": "Attach a Git note containing 'Reviewed for release: checks passed' to HEAD without amending the code or commit.",
+    "hint": "git notes add -m 'Reviewed for release: checks passed' HEAD."
+  },
+  {
+    "id": "A06",
+    "level": "advanced",
+    "title": "Squash local feature history safely",
+    "goal": "Combine the two feature/search commits into one new commit, preserving all content while keeping main unchanged.",
+    "hint": "On feature/search, git reset --soft main then git commit. Only rewrite a private feature branch."
+  },
+  {
+    "id": "A07",
+    "level": "advanced",
+    "title": "Use a focused sparse checkout",
+    "goal": "Use cone-mode sparse checkout to populate docs and apps/api but not assets or data; do not alter Git history.",
+    "hint": "git sparse-checkout init --cone; git sparse-checkout set docs apps/api."
+  },
+  {
+    "id": "A08",
+    "level": "advanced",
+    "title": "Pin a local library as a submodule",
+    "goal": "Add the sibling local library repo at vendor/library, commit its gitlink and .gitmodules on main, and keep the pointer to the library's current commit.",
+    "hint": "git -c protocol.file.allow=always submodule add ../library vendor/library; git add .gitmodules vendor/library; git commit -m 'Pin local library'. No remote network."
   }
 ]

@@ -68,3 +68,9 @@ git diff --check HEAD~1 HEAD
 - How does fixup differ from a normal follow-up commit?
 
 **Evidence:** A clear commit graph, tested behavior, and a short explanation of why the workflow is appropriate.
+
+## Put this lesson into practice — I05
+
+The feature branch was created before main advanced. Rebase the private feature commit onto the newer main. Record its old and new commit hashes and explain why shared branch history must not be casually rewritten.
+
+From the **course root**, run `python tools/practice.py start I05`, work inside `.practice/I05/repo`, then run `python tools/practice.py check I05`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/03_reviewable_history.md).

@@ -68,3 +68,9 @@ Path filters can avoid unnecessary jobs, but dependency graphs matter: changing 
 - Why can shallow clones obstruct git bisect?
 
 **Completion:** Explain performance, security, and recovery trade-offs with reproducible evidence.
+
+## Put this lesson into practice — A07
+
+Populate only docs and apps/api using cone-mode sparse checkout. Verify that assets and data are absent on disk while git ls-tree still sees every committed path.
+
+From the **course root**, run `python tools/practice.py start A07`, work inside `.practice/A07/repo`, then run `python tools/practice.py check A07`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/05_internals_and_dependencies.md).
