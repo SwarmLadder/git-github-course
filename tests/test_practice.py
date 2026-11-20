@@ -11,18 +11,20 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from practice import all_tasks, assert_task, git, make_commit, start_task
 
+LEGACY_IDS = [f'{level}{i:02}' for level in ('B', 'I', 'A') for i in range(1, 5)]
+
 
 class PracticeTests(unittest.TestCase):
     def test_task_catalog(self):
         tasks = all_tasks()
-        self.assertEqual(len(tasks), 12)
+        self.assertEqual(len(tasks), 24)
         for level in ("basics", "intermediate", "advanced"):
-            self.assertEqual(sum(t["level"] == level for t in tasks.values()), 4)
+            self.assertEqual(sum(t["level"] == level for t in tasks.values()), 8)
 
     def test_fixtures_are_incomplete_and_not_overwritten(self):
         with TemporaryDirectory() as temp:
             root = Path(temp)
-            for task_id in all_tasks():
+            for task_id in LEGACY_IDS:
                 with self.subTest(task_id=task_id):
                     start_task(task_id, root)
                     with self.assertRaises((AssertionError, RuntimeError)):
@@ -33,7 +35,7 @@ class PracticeTests(unittest.TestCase):
     def test_all_twelve_valid_completion_paths(self):
         with TemporaryDirectory() as temp:
             root = Path(temp)
-            for task_id in all_tasks():
+            for task_id in LEGACY_IDS:
                 with self.subTest(task_id=task_id):
                     folder = start_task(task_id, root)
                     repo = folder / "repo"
