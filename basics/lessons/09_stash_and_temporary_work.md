@@ -66,3 +66,9 @@ git status --short
 - Why is a stash a poor long-term backup?
 
 **Completion:** You can explain the intended history change and reproduce the workflow without disturbing another repository.
+
+## Put this lesson into practice — I06
+
+This later Intermediate lab includes a staged edit and an untracked draft. Prove why a plain stash would miss the draft; use git stash push -u and inspect the saved content without popping it.
+
+From the **course root**, run `python tools/practice.py start I06`, work inside `.practice/I06/repo`, then run `python tools/practice.py check I06`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/04_undo_and_conflict_triage.md).
