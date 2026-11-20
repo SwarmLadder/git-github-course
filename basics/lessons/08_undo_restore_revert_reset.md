@@ -66,3 +66,9 @@ git reflog -5
 - Why is `git reset --hard` dangerous?
 
 **Completion:** You can explain the intended history change and reproduce the workflow without disturbing another repository.
+
+## Put this lesson into practice — B07
+
+A tracked configuration was accidentally edited while untracked notes must survive. Before using git restore, prove exactly which edit would be lost, then restore only that tracked path. Avoid git reset --hard.
+
+From the **course root**, run `python tools/practice.py start B07`, work inside `.practice/B07/repo`, then run `python tools/practice.py check B07`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/01_worktree_index_safety.md).
