@@ -65,3 +65,9 @@ git branch -r
 - How is origin/main different from local main?
 
 **Completion:** You can explain the intended history change and reproduce the workflow without disturbing another repository.
+
+## Put this lesson into practice — B08
+
+One local publisher has pushed an update to a local bare origin. Fetch it without moving your own main, then explain the difference between main and origin/main. Do not use git pull for this exercise.
+
+From the **course root**, run `python tools/practice.py start B08`, work inside `.practice/B08/repo`, then run `python tools/practice.py check B08`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/02_offline_remotes.md).
