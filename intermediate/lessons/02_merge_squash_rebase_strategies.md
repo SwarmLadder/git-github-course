@@ -66,3 +66,9 @@ git diff --stat main...feature/notes
 - Why is rebase risky on a shared published branch?
 
 **Evidence:** A clear commit graph, tested behavior, and a short explanation of why the workflow is appropriate.
+
+## Put this lesson into practice — I07
+
+Compare squash and merge ancestry in a disposable repository. Squash a two-commit feature into one mainline commit without making its source commits ancestors. A squash does not create the commit automatically.
+
+From the **course root**, run `python tools/practice.py start I07`, work inside `.practice/I07/repo`, then run `python tools/practice.py check I07`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/03_reviewable_history.md).
