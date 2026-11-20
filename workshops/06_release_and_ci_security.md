@@ -59,6 +59,14 @@ Rollout: staging, monitoring and rollback plan
 
 Do not invent approvals, successful builds, signatures, credentials or deployments.
 
+## Failure clinic
+
+**Bisect reports the wrong commit.** Confirm the good/bad bounds and rerun the test at both endpoints. A nondeterministic or historically incompatible test invalidates the result.
+
+**CI passes but the release is not trustworthy.** Confirm the artifact came from the reviewed commit, that dependencies and release permissions were evaluated, and that staging evidence exists before asserting readiness.
+
+**A credential was copied into logs.** Revoke or rotate the affected credential promptly, assess its exposure, and then investigate history/log cleanup. Rewriting history alone cannot revoke a leaked credential.
+
 ## Score (100 points)
 
 | Dimension | Points |
