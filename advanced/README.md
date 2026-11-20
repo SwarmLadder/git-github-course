@@ -24,3 +24,7 @@ Read sequentially; each chapter includes four worked sections, explicit commands
 - [Course projects](../projects/README.md)
 
 Finish the chapter's exercises before checking reference material. Always run Git commands in a throwaway repository when they alter history or worktree files.
+
+## Enriched hands-on path
+
+Complete **A01–A08**: recovery, bisect, worktrees, release tags, Git notes, private history cleanup, sparse checkout and locally pinned submodules. Continue with [Workshop 05: Git internals and dependencies](../workshops/05_internals_and_dependencies.md) and [Workshop 06: Release and CI security](../workshops/06_release_and_ci_security.md), then document [Project 3](../projects/03_regression_release.md) against the [assessment rubric](../ASSESSMENT.md).
