@@ -69,3 +69,9 @@ git status -sb
 - Does force-with-lease guarantee that collaborators won't be disrupted?
 
 **Pass condition:** Explain the state transition, failure path, and safeguards before running advanced commands.
+
+## Put this lesson into practice — A06
+
+Turn two local feature commits into one new commit while keeping main fixed. Record commit graph before and after; explain why the operation is limited to a private branch.
+
+From the **course root**, run `python tools/practice.py start A06`, work inside `.practice/A06/repo`, then run `python tools/practice.py check A06`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/03_reviewable_history.md).
