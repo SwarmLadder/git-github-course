@@ -24,3 +24,7 @@ Read sequentially; each chapter includes four worked sections, explicit commands
 - [Course projects](../projects/README.md)
 
 Finish the chapter's exercises before checking reference material. Always run Git commands in a throwaway repository when they alter history or worktree files.
+
+## Enriched hands-on path
+
+Complete **I01–I08**, including a private feature rebase, stash with untracked files, squash merge and merge revert. Work through [Workshop 03: Reviewable history](../workshops/03_reviewable_history.md) and [Workshop 04: Undo and triage](../workshops/04_undo_and_conflict_triage.md), then write a complete simulated or real PR review for [Project 2](../projects/02_pull_request_ci.md). Do not claim hosted approval when you only tested locally.
