@@ -1,0 +1,86 @@
+[
+  {
+    "id": "B01",
+    "level": "basics",
+    "title": "Create your first commit",
+    "goal": "Create notes.txt containing the exact line 'learning Git', stage it, and commit it on main.",
+    "hint": "Git adds only staged changes to the next commit."
+  },
+  {
+    "id": "B02",
+    "level": "basics",
+    "title": "Stage one path, keep another unstaged",
+    "goal": "Stage the edited notes.txt but keep config.txt modified and unstaged.",
+    "hint": "Inspect git diff and git diff --cached."
+  },
+  {
+    "id": "B03",
+    "level": "basics",
+    "title": "Create a topic branch",
+    "goal": "Create branch feature/readme; add a '## Usage' heading to README.md and commit it. Keep main unchanged.",
+    "hint": "git switch -c feature/readme"
+  },
+  {
+    "id": "B04",
+    "level": "basics",
+    "title": "Push to a local bare remote",
+    "goal": "Push local main to the preconfigured local origin so both branch tips match.",
+    "hint": "git push -u origin main; no internet required."
+  },
+  {
+    "id": "I01",
+    "level": "intermediate",
+    "title": "Fast-forward a feature",
+    "goal": "Integrate feature/checklist into main by fast-forward (no merge commit).",
+    "hint": "git switch main; git merge --ff-only feature/checklist"
+  },
+  {
+    "id": "I02",
+    "level": "intermediate",
+    "title": "Resolve an actual merge conflict",
+    "goal": "On main, merge feature/red, resolve settings.txt to 'color=purple', and finish a two-parent merge commit.",
+    "hint": "Inspect conflict markers, edit, git add, git commit."
+  },
+  {
+    "id": "I03",
+    "level": "intermediate",
+    "title": "Revert a shared mistake",
+    "goal": "Revert the last commit so status.txt returns to 'healthy'; preserve the bad commit in ancestry.",
+    "hint": "git revert --no-edit HEAD"
+  },
+  {
+    "id": "I04",
+    "level": "intermediate",
+    "title": "Cherry-pick one fix",
+    "goal": "On maintenance, cherry-pick the latest fix from main without moving main.",
+    "hint": "git cherry-pick main"
+  },
+  {
+    "id": "A01",
+    "level": "advanced",
+    "title": "Recover a misplaced commit",
+    "goal": "Use reflog to identify the commit removed by reset, then create branch recovered-work pointing to it.",
+    "hint": "git reflog; git branch recovered-work <hash>"
+  },
+  {
+    "id": "A02",
+    "level": "advanced",
+    "title": "Locate a regression by bisect",
+    "goal": "Find the first bad commit using git bisect; record its full 40/64-character Git hash in finding.txt. Reset bisect mode before grading.",
+    "hint": "Known good: baseline commit; known bad: HEAD; test: python check.py"
+  },
+  {
+    "id": "A03",
+    "level": "advanced",
+    "title": "Use a linked worktree",
+    "goal": "Create a worktree at the adjacent hotfix path on branch hotfix. Commit FIX.txt containing 'hotfix ready' in that worktree; main must remain untouched.",
+    "hint": "git worktree add -b hotfix ../hotfix HEAD"
+  },
+  {
+    "id": "A04",
+    "level": "advanced",
+    "title": "Make an annotated release tag",
+    "goal": "Create annotated v1.0.0 tag on main's current commit with a meaningful release message.",
+    "hint": "git tag -a v1.0.0 -m 'Release 1.0.0'"
+  }
+]
