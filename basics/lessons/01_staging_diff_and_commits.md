@@ -70,3 +70,9 @@ git diff -- memo.txt
 - Which command removes an edit from the index but keeps it in the working tree?
 
 **Finish when:** You can reproduce the commands in a fresh practice repo and explain every changed file, ref, and staged state.
+
+## Put this lesson into practice — B06
+
+Compare HEAD, the index and the worktree for one 50-line file. Stage only the first hunk while preserving the second as an unstaged draft. Explain the differences between git diff and git diff --cached.
+
+From the **course root**, run `python tools/practice.py start B06`, work inside `.practice/B06/repo`, then run `python tools/practice.py check B06`. Save the before/after Git state in your evidence journal. Continue with the [guided workshop](../../workshops/01_worktree_index_safety.md).
